@@ -8,18 +8,24 @@ import { HomeComponent } from './features/home/components/home/home.component';
 import { CatogaryComponent } from './features/catogary/components/catogary/catogary.component';
 import { CartComponent } from './features/cart/cart/cart.component';
 import { NotfoundComponent } from './core/auth/componentes/notfound/notfound.component';
+import { ProductListComponent } from './features/product/components/product-list/product-list.component';
+import { BrandListComponent } from './features/brands/components/brand-list/brand-list.component';
+import { ProductDetailsComponent } from './features/product/components/product-details/product-details.component';
 
 export const routes: Routes = [
-    {path:'auth',component:AuthComponent,children:[
+    {path:'',component:AuthComponent,children:[
         {path:'',redirectTo:"login",pathMatch:'full'},
         {path:'login',component:LoginComponent},
         {path:'register',component:RegisterComponent},
-        {path:'**',component:NotfoundComponent},
+       
     ]},
-    {path:'user',component:UserComponent,children:[
+    {path:'',component:UserComponent,children:[
         {path:'',redirectTo:"home",pathMatch:'full'},
         {path:'home',component:HomeComponent},
         {path:'category',component:CatogaryComponent},
+        {path:'products',component:ProductListComponent},
+        {path:'products-details/:id',component:ProductDetailsComponent},
+        {path:'brands',component:BrandListComponent},
         {path:'cart',component:CartComponent},
         {path:'**',component:NotfoundComponent},
     ]},
