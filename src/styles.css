@@ -3,25 +3,30 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @source "../node_modules/flowbite";
-@theme{
-    --color-main:#0aad0a;
-    --color-light:#f0f3f2;
-    --shadow-shadow:rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
-    --font-family:'Encode Sans Expanded', sans-serif;
-    --color-rating:#ffc908;
+
+@theme {
+    --color-main: #0aad0a;
+    --color-light: #f0f3f2;
+    --shadow-shadow: rgba(145, 158, 171, .2) 0px 2px 4px -1px, rgba(145, 158, 171, .14) 0px 4px 5px 0px, rgba(145, 158, 171, .12) 0px 1px 10px 0px;
+    --font-family: 'Encode Sans Expanded', sans-serif;
+    --color-rating: #ffc908;
 }
 
-@layer components
-{
-    .btn{
-        @apply bg-main text-white w-full my-5 py-2 cursor-pointer rounded-lg  text-center hover:bg-main/80 translate-y-full group-hover:translate-0 group-hover:opacity-100 opacity-0 transition-all duration-500
+@layer components {
+    .btn {
+        @apply bg-main text-white w-full my-5 py-2 cursor-pointer rounded-lg text-center hover:bg-main/80 translate-y-full group-hover:translate-0 group-hover:opacity-100 opacity-0 transition-all duration-500
+    }
+    .btn-yellow{
+        @apply  shadow-xl py-3 px-6 text-sm cursor-pointer text-gray-800 font-semibold bg-yellow-400 rounded w-full transform duration-300 hover:rounded-4xl 
     }
 }
-body{
+
+body {
     font-family: var(--font-family) !important;
 }
 
-@media (width >= 96rem) {
+@media (width >=96rem) {
     .container {
         max-width: 86rem;
-    }}
+    }
+}
