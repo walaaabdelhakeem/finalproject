@@ -11,22 +11,25 @@ import { NotfoundComponent } from './core/auth/componentes/notfound/notfound.com
 import { ProductListComponent } from './features/product/components/product-list/product-list.component';
 import { BrandListComponent } from './features/brands/components/brand-list/brand-list.component';
 import { ProductDetailsComponent } from './features/product/components/product-details/product-details.component';
+import { userExistGuard } from './core/guards/user-exist.guard';
+import { homeguardGuard } from './core/guards/homeguard.guard';
 
 export const routes: Routes = [
+    {path:'',redirectTo:"home",pathMatch:'full'},
     {path:'',component:AuthComponent,children:[
         {path:'',redirectTo:"register",pathMatch:'full'},
-        {path:'login',component:LoginComponent},
+        {path:'login',component:LoginComponent,canActivate:[userExistGuard],title:'login'},
         {path:'register',component:RegisterComponent},
        
     ]},
-    {path:'',component:UserComponent,children:[
+    {path:'',component:UserComponent,canActivate:[homeguardGuard],children:[
         {path:'',redirectTo:"home",pathMatch:'full'},
-        {path:'home',component:HomeComponent},
+        {path:'home',component:HomeComponent,title:'Home'},
         {path:'category',component:CatogaryComponent},
         {path:'products',component:ProductListComponent},
         {path:'products-details/:id',component:ProductDetailsComponent},
         {path:'brands',component:BrandListComponent},
         {path:'cart',component:CartComponent},
-        {path:'**',component:NotfoundComponent},
-    ]},
+        
+    ]},{path:'**',component:NotfoundComponent},
 ];

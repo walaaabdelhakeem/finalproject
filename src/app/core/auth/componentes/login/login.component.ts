@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
         next: (res) => {
           this.isloading = false;
           if (res.message = 'success') {
+            this.registerservice.setLocalstorgeToken(res.token)
             this.router.navigate(['/home'])
           }
         }, error: ({ error }) => {
