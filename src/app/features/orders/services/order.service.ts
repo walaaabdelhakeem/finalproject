@@ -11,7 +11,7 @@ export class OrderService {
 
   constructor(private http: HttpClient, private httpservice: IauthService) { }
   Checkoutsession(id: string | null, shippingAddress: { details: string, phone: string, city: string }): Observable<any> {
-    const baseurl = '?url=http://localhost:4200'
+    const baseurl = '?url=https://finalproject-2.vercel.app'
     return this.http.post(`${environment.baseUrl}orders/checkout-session/${id}` + baseurl, shippingAddress)
   }
 }
