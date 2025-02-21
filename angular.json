@@ -8,7 +8,8 @@
       "schematics": {
         "@schematics/angular:component": {
           "skipTests": true
-        },"@schematics/angular:service": {
+        },
+        "@schematics/angular:service": {
           "skipTests": true
         }
       },
@@ -32,11 +33,12 @@
                 "input": "public"
               }
             ],
-            "styles": ["./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-            "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
-            "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
-               "node_modules/ngx-spinner/animations/ball-atom.css",
-               "src/styles.css"
+            "styles": [
+              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "node_modules/ngx-spinner/animations/ball-atom.css",
+              "src/styles.css"
             ],
             "scripts": [
               "./node_modules/flowbite/dist/flowbite.min.js"
@@ -50,9 +52,10 @@
           "configurations": {
             "production": {
               "fileReplacements": [
-                {"with": "./src/environments/environments.ts",
-                "replace": "./src/environments/environments.prod.ts"
-              }
+                {
+                  "with": "./src/environments/environments.ts",
+                  "replace": "./src/environments/environments.prod.ts"
+                }
               ],
               "budgets": [
                 {
