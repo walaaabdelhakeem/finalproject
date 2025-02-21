@@ -9,9 +9,9 @@ import { Observable } from 'rxjs';
 })
 export class OrderService {
 
-  constructor(private http:HttpClient,private httpservice: IauthService) { }
-  Checkoutsession(id:string|null,shippingAddress:{details:string,phone:string,city:string}):Observable<any>{
-   const baseurl='?url=https://finalproject-o6tz.vercel.app/#'
-    return this.http.post(`${environment.baseUrl}orders/checkout-session/${id}`+baseurl,shippingAddress)
+  constructor(private http: HttpClient, private httpservice: IauthService) { }
+  Checkoutsession(id: string | null, shippingAddress: { details: string, phone: string, city: string }): Observable<any> {
+    const baseurl = '?url=http://localhost:4200'
+    return this.http.post(`${environment.baseUrl}orders/checkout-session/${id}` + baseurl, shippingAddress)
   }
 }

@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { HomecatpgeriesService } from '../../services/homecatpgeries.service';
 import { Icarogery } from '../../models/icarogery';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-catogary-slider',
-  imports: [CarouselModule],
+  imports: [CarouselModule,NgFor],
   templateUrl: './catogary-slider.component.html',
   styleUrl: './catogary-slider.component.css'
 })
