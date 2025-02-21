@@ -17,7 +17,5 @@ export class NavbarComponent {
   logoutuser(): void {
     if (isPlatformBrowser(this.platformId)) { this.logout.logoutfunc(); }
   }
-  changemode() {
-
-  }
+  
 }

@@ -3,7 +3,7 @@
     <div [routerLink]="['/products-details',product._id]" class="">
         <img [src]="product.imageCover" class="w-full group-hover:scale-110 transition-all ease-in-out duration-500 "
             alt="">
-        <h5 class="text-main my-2">{{product.category.name}}</h5>
+        <h5 class="text-main my-2">{{product.category?.name}}</h5>
         <h4 class="font-bold line-clamp-1">{{product.title}}</h4>
         <div class="flex justify-between items-center my-5">
             <span>{{product.price}} EGP</span>
