@@ -10,45 +10,45 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
   templateUrl: './catogary-slider.component.html',
   styleUrl: './catogary-slider.component.css'
 })
-export class CatogarySliderComponent implements OnInit{
-private catogeryservice=inject(HomecatpgeriesService)
-catogery:Icarogery[]={} as Icarogery[]
-customOptions: OwlOptions = {
-  loop: true,
-  mouseDrag: true,
-  touchDrag: true,
-  pullDrag: true,
-  autoplay:true,
-  dots: true,
-  autoplayTimeout:2000,
-  autoplayHoverPause:true,
-  navSpeed: 700,
-  navText: ['', ''],
-  responsive: {
-    0: {
-      items: 1
+export class CatogarySliderComponent implements OnInit {
+  private catogeryservice = inject(HomecatpgeriesService)
+  catogery: Icarogery[] = [{}] as Icarogery[]
+  customOptions: OwlOptions = {
+    loop: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    autoplay: true,
+    dots: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 3
+      },
+      740: {
+        items: 4
+      },
+      940: {
+        items: 6
+      }
     },
-    400: {
-      items: 3
-    },
-    740: {
-      items: 4
-    },
-    940: {
-      items: 6
-    }
-  },
-  nav: false
-}
-getallcatogeryhome(){
-  this.catogeryservice.gelallhomecategoery().subscribe({
-    next:(res)=>{
-this.catogery=res.data;
-console.log(this.catogery);
-    }
-})
-}
-ngOnInit(): void {
-  this.getallcatogeryhome();
-}
+    nav: false
+  }
+  getallcatogeryhome() {
+    this.catogeryservice.gelallhomecategoery().subscribe({
+      next: (res) => {
+        this.catogery = res.data;
+        console.log(this.catogery);
+      }
+    })
+  }
+  ngOnInit(): void {
+    this.getallcatogeryhome();
+  }
 }
