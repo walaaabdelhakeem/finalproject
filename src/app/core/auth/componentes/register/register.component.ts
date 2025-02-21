@@ -49,12 +49,16 @@ export class RegisterComponent implements OnInit {
       this.registerservice.register(this.registerGroup.value).subscribe({
         next: (res) => {
           this.isloading = false;
-          if (res.message = 'success') {
+          console.log(res)
+          if (res.message == 'success') {
             this.router.navigate(['/login'])
+            
           }
         }, error: ({ error }) => {
           this.massageError = error.message;
           this.isloading = false
+          console.log(error)
+
         }
       })
     } else {

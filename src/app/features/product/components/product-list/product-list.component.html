@@ -3,10 +3,8 @@
     <h2 class="text-4xl font-bold mb-10">popular product</h2>
     <div class=" grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-12">
         @for (product of allProducts; track product._id) {
-       <app-product-card [product]="product"/>}
-       @empty {
-        <h1 class="text-center text-4xl text-main col-span-12">loading...</h1>
-       }
+       <app-product-card [product]="product" (addtocart)="addtocartputn($event)" (addtowish)="addtowishlist($event)"/>
+      }
     </div>
    </div>
 </section>

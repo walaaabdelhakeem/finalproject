@@ -54,7 +54,8 @@
             </div>
           </div>
           <authentication-validate [control]="registerGroup.get('password')" />
-
+          <p class="text-sm text-white mt-8">Forget your password? <a routerLink="/forgetpass"
+            class="text-yellow-400 font-semibold hover:underline ml-1 cursor-pointer">reset password</a></p>
           <div class="mt-8">
             <button [disabled]="isloading" type="submit" [class.bg-gray-200]="isloading||registerGroup.invalid"
               class="btn-yellow">

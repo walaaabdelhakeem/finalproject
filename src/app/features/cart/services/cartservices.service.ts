@@ -11,29 +11,23 @@ export class CartservicesService {
 
   constructor(private httpClient: HttpClient, private httpservice: IauthService) { }
 
-  addTOCart(productId: string) {
-    return this.httpClient.post(`${environment.baseUrl}cart`, { productId }, {
-      headers: { token: this.httpservice.checkifuserExist()! }
-    })
+  addTOCart(productId: string):Observable<any> {
+    return this.httpClient.post(`${environment.baseUrl}cart`, { productId } )
   }
-  uddateQuantityOfCart(productId: string,count:number) {
-    return this.httpClient.put(`${environment.baseUrl}cart/${productId}`, {count}  , {
-      headers: { token: this.httpservice.checkifuserExist()! }
-    })
+
+  updateQuantityOfCart(productId: string,count:number):Observable<any> {
+    return this.httpClient.put(`${environment.baseUrl}cart/${productId}`, {count}  )
   }
-  getLoggeduse() {
-    return this.httpClient.get(`${environment.baseUrl}cart`, {
-      headers: { token: this.httpservice.checkifuserExist()! }
-    })
+
+  getLoggeduse():Observable<any> {
+    return this.httpClient.get(`${environment.baseUrl}cart` )
   }
-  removespecificcartItem(productId: string,count:number) {
-    return this.httpClient.delete(`${environment.baseUrl}cart/${productId}`  , {
-      headers: { token: this.httpservice.checkifuserExist()! }
-    })
+
+  removespecificcartItem(productId: string):Observable<any> {
+    return this.httpClient.delete(`${environment.baseUrl}cart/${productId}`  )
   }
-  Clearusercart() {
-    return this.httpClient.delete(`${environment.baseUrl}cart/`  , {
-      headers: { token: this.httpservice.checkifuserExist()! }
-    })
+
+  Clearusercart():Observable<any> {
+    return this.httpClient.delete(`${environment.baseUrl}cart/`)
   }
 }

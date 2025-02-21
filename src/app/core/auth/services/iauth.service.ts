@@ -20,9 +20,7 @@ export class IauthService {
     return this.http.post(`${environment.baseUrl}auth/signin`, data)
   }
   verifyToken(): Observable<any> {
-    return this.http.get(`${environment.baseUrl}auth/verifyToken`, {
-      headers: { token: localStorage.getItem('token')! }
-    })
+    return this.http.get(`${environment.baseUrl}auth/verifyToken`)
   }
   setLocalstorgeToken(token: string): void {
     try{ if(typeof localStorage!='undefined'){
@@ -33,8 +31,11 @@ export class IauthService {
   }
   checkifuserExist(): string|null {
     console.log('checkifuserExist')
-    if(typeof localStorage!='undefined')
+    if(typeof localStorage!='undefined'){
+      
     return localStorage.getItem('token')!
+    
+    }
   return null
   }
   logoutfunc(): void {

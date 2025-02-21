@@ -1,1 +1,12 @@
-<p>catogary-slider works!</p>
+<owl-carousel-o [options]="customOptions">
+
+    @for (item of catogery; track $index) {
+      <ng-template carouselSlide >
+        <div>
+            <img [src]="item.image" alt="" class="h-[250px]">
+            <h3 class="text-main">{{item.name}} </h3>
+        </div>
+      </ng-template>
+    }
+
+  </owl-carousel-o>

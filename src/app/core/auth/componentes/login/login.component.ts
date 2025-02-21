@@ -2,12 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 
 import { IauthService } from '../../services/iauth.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthenticationValidateComponent } from '../../../../shared/components/authentication-validate/authentication-validate.component';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, AuthenticationValidateComponent],
+  imports: [ReactiveFormsModule, AuthenticationValidateComponent,RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

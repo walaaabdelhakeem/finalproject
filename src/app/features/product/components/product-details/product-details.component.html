@@ -19,14 +19,14 @@
             <div class="col-span-6 ">
                 <div>
                     <h2 class="text-4xl font-bold capitalize text-main">{{detailsProduct.title}}</h2>
-                    <h4 class="text-xl my-3 px-3">{{detailsProduct.category.name}}</h4>
+                    <h4 class="text-xl my-3 px-3">{{detailsProduct.category!.slug}}</h4>
                     <p class="px-4">{{detailsProduct.description}}</p>
                     <div class="text-green-900 font-extrabold my-3 px-4 dark:text-white text-2xl ">
                         {{detailsProduct.price}} EGP</div>
 
                 </div>
                 <div class="text-end">
-                    <button
+                    <button (click)="addtocartputn(detailsProduct._id)"
                         class="shadow-shadow py-2 bg-main/10 w-full   my-5 border-b-2 border-main rounded-2xl text-black/80   opacity-100 cursor-pointer">
                         <i class="fa-solid fa-cart-flatbed-suitcase"></i></button>
                 </div>
