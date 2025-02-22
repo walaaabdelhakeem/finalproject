@@ -18,10 +18,9 @@ export class CatogarySliderComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
-    autoplay: true,
+    
     dots: true,
-    autoplayTimeout: 2000,
-    autoplayHoverPause: true,
+   
     navSpeed: 700,
     navText: ['', ''],
     responsive: {

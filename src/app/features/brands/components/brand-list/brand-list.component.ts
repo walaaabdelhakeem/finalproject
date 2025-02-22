@@ -10,7 +10,7 @@ import { BrandsService } from '../../services/brands.service';
 })
 export class BrandListComponent implements OnInit{
   private brandservice=inject(BrandsService)
-Brands:Ibrands[]={} as Ibrands[]
+Brands:Ibrands[]=[{}] as Ibrands[]
 getallBrandshome(){
   this.brandservice.gelallhomeBrands().subscribe({
     next:(res)=>{

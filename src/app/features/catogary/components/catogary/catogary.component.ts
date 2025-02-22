@@ -10,7 +10,7 @@ import { Icarogery } from '../../../home/models/icarogery';
 })
 export class CatogaryComponent {
 private catogeryservice=inject(HomecatpgeriesService)
-catogery:Icarogery[]={} as Icarogery[]
+catogery:Icarogery[]=[{}] as Icarogery[]
 getallcatogeryhome(){
   this.catogeryservice.gelallhomecategoery().subscribe({
     next:(res)=>{
